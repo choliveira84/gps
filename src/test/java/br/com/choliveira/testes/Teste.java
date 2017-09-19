@@ -1,7 +1,7 @@
 /**
  * 
  */
-package gps.br.com.choliveira.testes;
+package br.com.choliveira.testes;
 
 /**
  * Classe utilizada para os testes unitários via JUnit.
