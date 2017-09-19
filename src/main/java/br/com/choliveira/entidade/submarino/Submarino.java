@@ -9,7 +9,7 @@ import br.com.choliveira.entidade.ponto.Ponto;
  * levado em consideração que o submarino sempre começará no ponto (0, 0, 0,
  * NORTE).
  * 
- * @author carlo
+ * @author Carlos Henrique de Oliveira
  * @since 18/09/2017
  *
  */
@@ -33,8 +33,8 @@ public class Submarino {
 		this.ponto = ponto;
 	}
 
-	/*
-	 * (0 0 0 Norte)
+	/**
+	 * (0 0 0 Norte) -> Posicição inicial do submarino.
 	 */
 	public Submarino() {
 		direcao = new Norte();
@@ -59,6 +59,30 @@ public class Submarino {
 
 	public void descer() {
 		ponto.setZ(ponto.getZ() - 1);
+	}
+
+	/**
+	 * Método utilizado para executar o comando passado pela lista de comando
+	 * (inicialmente uma String contendo as movimentações).
+	 * 
+	 * @param comando
+	 */
+	public void executarComando(String comando) {
+		if (comando.equalsIgnoreCase("L")) {
+			girarEsquerda();
+		}
+		if (comando.equalsIgnoreCase("R")) {
+			girarDireita();
+		}
+		if (comando.equalsIgnoreCase("D")) {
+			descer();
+		}
+		if (comando.equalsIgnoreCase("U")) {
+			subir();
+		}
+		if (comando.equalsIgnoreCase("M")) {
+			movimentar();
+		}
 	}
 
 	@Override
