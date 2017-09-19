@@ -1,10 +1,10 @@
 /**
  * 
  */
-package br.com.choliveira.entidade;
+package br.com.choliveira.entidade.ponto;
 
 /**
- * @author carlo
+ * @author Carlos Henrique de Oliveira
  * @since 18/09/2017
  */
 public class Ponto {
