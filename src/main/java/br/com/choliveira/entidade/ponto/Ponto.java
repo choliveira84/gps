@@ -32,7 +32,16 @@ public class Ponto {
 		return z;
 	}
 
+	/**
+	 * Levando em consideração que 0, 0, 0 indica a superfície, o eixo Z não
+	 * pode ultrapassar 0.
+	 * 
+	 * @param z
+	 */
 	public void setZ(int z) {
+		if (z > 0) {
+			z = 0;
+		}
 		this.z = z;
 	}
 

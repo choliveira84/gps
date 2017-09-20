@@ -34,7 +34,7 @@ public class Submarino {
 	}
 
 	/**
-	 * (0 0 0 Norte) -> Posicição inicial do submarino.
+	 * (0 0 0 Norte) -> Posicição inicial do submarino (superfície).
 	 */
 	public Submarino() {
 		direcao = new Norte();
@@ -67,21 +67,19 @@ public class Submarino {
 	 * 
 	 * @param comando
 	 */
-	public void executarComando(String comando) {
-		if (comando.equalsIgnoreCase("L")) {
-			girarEsquerda();
-		}
-		if (comando.equalsIgnoreCase("R")) {
-			girarDireita();
-		}
-		if (comando.equalsIgnoreCase("D")) {
-			descer();
-		}
-		if (comando.equalsIgnoreCase("U")) {
-			subir();
-		}
-		if (comando.equalsIgnoreCase("M")) {
-			movimentar();
+	public void executarComando(String comandos) {
+		String[] arrayComandos = comandos.split("");
+		for (int i = 0; i < arrayComandos.length; i++) {
+			if (arrayComandos[i].equalsIgnoreCase("L"))
+				girarEsquerda();
+			else if (arrayComandos[i].equalsIgnoreCase("R"))
+				girarDireita();
+			else if (arrayComandos[i].equalsIgnoreCase("D"))
+				descer();
+			else if (arrayComandos[i].equalsIgnoreCase("U"))
+				subir();
+			else if (arrayComandos[i].equalsIgnoreCase("M"))
+				movimentar();
 		}
 	}
 
